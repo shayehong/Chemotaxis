@@ -30,11 +30,13 @@
  {     
  	int bX;
  	int bY;
- 	//int co;
+ 	int cO;
 
  	Bacteria(int x,int y){
  		bX = x;
  		bY = y;
+ 		cO = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255),200);
+
  		//co = (int)(Math.random()*255);
  		 
  	}
@@ -42,7 +44,7 @@
  	void move(){
  		int dir = (int)(Math.random()*4);
  		int dist = (int)(Math.random()*3)+1;
-
+ 		
  		if(dir == 0){
  			//moves to the right
  			bX += dist;
@@ -67,7 +69,7 @@
  		noStroke();
  		fill(233,253,255,100);
  		ellipse(bX,bY,15,15);
- 		fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+ 		fill(cO);
  		ellipse(bX,bY,9,9);
  	}
 
