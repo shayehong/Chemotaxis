@@ -67,7 +67,7 @@
 
  	void show(){
  		noStroke();
- 		fill(233,253,255,100);
+ 		fill(cO,190);//(233,253,255,100);
  		ellipse(bX,bY,15,15);
  		fill(cO);
  		ellipse(bX,bY,9,9);
