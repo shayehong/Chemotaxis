@@ -3,7 +3,7 @@
  void setup()   
  {     
  	//initialize bacteria variables here  
- 	size(500,500);
+ 	size(600,600);
  	colony = new Bacteria[20];
 
  	//makes the bacteria
@@ -31,11 +31,13 @@
  	int bX;
  	int bY;
  	int cO;
+ 	//boolean alive;
 
  	Bacteria(int x,int y){
  		bX = x;
  		bY = y;
  		cO = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255),200);
+ 		//alive = true;
 
  		//co = (int)(Math.random()*255);
  		 
@@ -71,7 +73,13 @@
  		ellipse(bX,bY,15,15);
  		fill(cO);
  		ellipse(bX,bY,9,9);
- 	}
+ 	}/*
+ 	void preditor(){|
+ 		if(get(x,y) == )
 
+
+ 	}
+*/
  	
  }    
+
