@@ -3,7 +3,7 @@
  void setup()   
  {     
  	//initialize bacteria variables here  
- 	size(600,600);
+ 	size(750,750);
  	colony = new Bacteria[20];
 
  	//makes the bacteria
