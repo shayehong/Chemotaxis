@@ -1,30 +1,36 @@
  //declare bacteria variables here  
  Bacteria [] colony;
+ Predator eat;
  void setup()   
  {     
  	//initialize bacteria variables here  
  	size(750,750);
- 	colony = new Bacteria[20];
+ 	eat = new Predator();
+ 	colony = new Bacteria[40];
 
  	//makes the bacteria
  	for(int i = 0; i < colony.length; i++){
  		colony[i] = new Bacteria(200,200);
  	}
 
-
+ 	
 
  }   
  void draw()   
  {    
  	//move and show the bacteria 
  	background(0);
- 	for(int j =0; j<colony.length; j++){
- 		colony[j].move();
- 		colony[j].show();
-
- 	}
+ 	eat.move();
+ 	eat.show();
  	
- }  
+	 	for(int j =0; j<colony.length; j++){
+	 		colony[j].move();
+	 		colony[j].show();
+	 		}
+
+ 		}
+ 	
+   
  class Bacteria    
  //lots of java!   
  {     
@@ -68,18 +74,60 @@
  	}
 
  	void show(){
- 		noStroke();
- 		fill(cO,190);//(233,253,255,100);
- 		ellipse(bX,bY,15,15);
- 		fill(cO);
- 		ellipse(bX,bY,9,9);
- 	}/*
- 	void preditor(){|
- 		if(get(x,y) == )
+ 		if(get(bX,bY) != color(255,165,0)){
+ 			noStroke();
+	 		fill(cO,180);
+	 		ellipse(bX,bY,15,15);
+	 		fill(cO,180);
+	 		ellipse(bX,bY,9,9);
 
-
+ 		}
+	 		
+	 	
  	}
-*/
- 	
- }    
+ 
 
+}
+
+
+    
+class Predator 
+{
+	int myX;
+	int myY;
+	int co;
+	int speed;
+
+	Predator(){
+		 myX = 50;
+		 myY = 50;
+		 co = color(255,165,0);
+		 speed = 3;
+
+	}
+	void move()
+	{
+		if(myX <= mouseX)
+		{
+			myX+=speed;
+		}
+		if(myX >= mouseX)
+		{
+			myX-=speed;
+		}
+		if(myY <= mouseY)
+		{
+			myY+=speed;
+		}
+		if(myY >= mouseY)
+		{
+			myY-=speed;
+		}
+	}
+
+	void show(){
+		fill(co);
+		ellipse(myX,myY,60,60);
+	}
+
+}
